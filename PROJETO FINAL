@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+ <meta charset="UTF-8">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <title>Gabriel | Desenvolvedor Web</title>
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+ <style>
+
+  :root {
+
+   --azul: #3b82f6;
+
+   --azul-neon: #22d3ee;
+
+   --preto: #05060a;
+
+   --cinza: #0e1018;
+
+   --borda: #1c2033;
+
+  }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+  body { font-family: 'Poppins', sans-serif; background: var(--preto); color: #c8cde0; }
+
+  section { padding: 80px 0; }
+
+  h1, h2, h3, h4, h5 { color: #fff; font-weight: 600; }
+
+
+
+  .navbar { background: rgba(5, 6, 10, 0.92); border-bottom: 1px solid var(--borda); }
+
+  .navbar .nav-link { color: #aab0c8; }
+
+  .navbar .nav-link:hover { color: var(--azul-neon); }
+
+  .navbar-brand { font-weight: 700; }
+
+  .navbar-brand span, .destaque { color: var(--azul-neon); }
+
+
+
+  #inicio {
+
+   padding-top: 150px;
+
+   padding-bottom: 110px;
+
+   background: radial-gradient(circle at 80% 20%, rgba(59,130,246,.35), transparent 45%), var(--preto);
+
+  }
+
+  .selo { display: inline-block; border: 1px solid var(--azul); color: var(--azul-neon); border-radius: 30px; padding: 4px 16px; font-size: .9rem; }
+
+  .btn-azul { background: var(--azul); color: #fff; border: 0; font-weight: 500; border-radius: 10px; padding: 10px 24px; transition: .2s; }
+
+  .btn-azul:hover { background: var(--azul-neon); color: var(--preto); box-shadow: 0 0 20px rgba(34,211,238,.5); }
+
+  .btn-borda { border: 1px solid var(--azul); color: #fff; border-radius: 10px; padding: 10px 24px; transition: .2s; }
+
+  .btn-borda:hover { background: var(--azul); color: #fff; }
+
+
+
+  .linha { width: 60px; height: 4px; background: linear-gradient(90deg, var(--azul), var(--azul-neon)); border-radius: 2px; margin: 10px auto 40px; }
+
+
+
+  .bloco { background: var(--cinza); border: 1px solid var(--borda); border-radius: 14px; padding: 28px; }
+
+  .bloco i { color: var(--azul-neon); }
+
+
+
+  .habilidade { background: var(--cinza); border: 1px solid var(--borda); border-radius: 14px; padding: 24px 10px; text-align: center; transition: .25s; }
+
+  .habilidade i { font-size: 2rem; color: var(--azul-neon); }
+
+  .habilidade p { margin: 8px 0 0; color: #fff; font-weight: 500; }
+
+  .habilidade:hover { border-color: var(--azul-neon); box-shadow: 0 0 18px rgba(34,211,238,.25); transform: translateY(-4px); }
+
+
+
+  .card-projeto { background: var(--cinza); border: 1px solid var(--borda); border-radius: 14px; transition: .25s; }
+
+  .card-projeto:hover { border-color: var(--azul); box-shadow: 0 0 22px rgba(59,130,246,.35); transform: translateY(-6px); }
+
+  .card-projeto .icone { font-size: 2.2rem; color: var(--azul-neon); }
+
+  .card-projeto .card-text { color: #aab0c8; }
+
+
+
+  .tech { background: rgba(59,130,246,.15); color: var(--azul-neon); border: 1px solid rgba(59,130,246,.4); font-weight: 500; }
+
+
+
+  .modal-content { background: var(--cinza); border: 1px solid var(--azul); color: #c8cde0; border-radius: 14px; }
+
+  .modal-header, .modal-footer { border-color: var(--borda); }
+
+  .btn-close { filter: invert(1); }
+
+  .modal-body h6 { color: var(--azul-neon); margin-top: 16px; }
+
+
+
+  #contato { background: var(--cinza); }
+
+  .form-control { background: var(--preto); border: 1px solid var(--borda); color: #fff; border-radius: 10px; padding: 12px; }
+
+  .form-control::placeholder { color: #6b7190; }
+
+  .form-control:focus { background: var(--preto); color: #fff; border-color: var(--azul); box-shadow: 0 0 0 .2rem rgba(59,130,246,.25); }
+
+  .form-label { color: #fff; }
+
+
+
+  footer { border-top: 1px solid var(--borda); }
+
+ </style>
+
+</head>
+
+<body>
+
+
+
+ <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+  <div class="container">
+
+   <a class="navbar-brand" href="#inicio">Gabriel<span>.dev</span></a>
+
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+
+    <span class="navbar-toggler-icon"></span>
+
+   </button>
+
+   <div class="collapse navbar-collapse" id="menu">
+
+    <ul class="navbar-nav ms-auto">
+
+     <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+
+     <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
+
+     <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+
+     <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+
+     <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+
+    </ul>
+
+   </div>
+
+  </div>
+
+ </nav>
+
+
+
+ <section id="inicio">
+
+  <div class="container">
+
+   <div class="row">
+
+    <div class="col-lg-8 text-center text-lg-start">
+
+     <span class="selo mb-3">&lt;/&gt; Disponível para projetos</span>
+
+     <h1 class="display-3 fw-bold mt-3">Olá! Sou Gabriel,<br><span class="destaque">Desenvolvedor Web.</span></h1>
+
+     <p class="lead mt-3 mb-4">Transformo ideias em sites e sistemas modernos, rápidos e responsivos.</p>
+
+     <a href="#contato" class="btn btn-azul btn-lg me-2 mb-2">Fale comigo</a>
+
+     <a href="#projetos" class="btn btn-borda btn-lg mb-2">Ver projetos</a>
+
+    </div>
+
+   </div>
+
+  </div>
+
+ </section>
+
+
+
+ <section id="sobre">
+
+  <div class="container">
+
+   <h2 class="text-center">Sobre Mim</h2>
+
+   <div class="linha"></div>
+
+   <div class="row g-4">
+
+    <div class="col-md-4">
+
+     <div class="bloco h-100">
+
+      <i class="bi bi-mortarboard-fill fs-2"></i>
+
+      <h5 class="mt-2">Formação</h5>
+
+      <p class="mb-0">Análise e Desenvolvimento de Sistemas (ADS) pelo UNIPÊ.</p>
+
+     </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+     <div class="bloco h-100">
+
+      <i class="bi bi-code-slash fs-2"></i>
+
+      <h5 class="mt-2">Interesse profissional</h5>
+
+      <p class="mb-0">Desenvolvimento web, criação de sites e sistemas com Python e Supabase.</p>
+
+     </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+     <div class="bloco h-100">
+
+      <i class="bi bi-rocket-takeoff-fill fs-2"></i>
+
+      <h5 class="mt-2">Objetivos de carreira</h5>
+
+      <p class="mb-0">Crescer como desenvolvedor Front-End e Full Stack, resolvendo problemas reais.</p>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </div>
+
+ </section>
+
+
+
+ <section id="habilidades" style="background: var(--cinza);">
+
+  <div class="container">
+
+   <h2 class="text-center">Habilidades Técnicas</h2>
+
+   <div class="linha"></div>
+
+   <div class="row g-3">
+
+    <div class="col-6 col-md-4 col-lg-2">
+
+     <div class="habilidade"><i class="bi bi-filetype-html"></i><p>HTML5</p></div>
+
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-2">
+
+     <div class="habilidade"><i class="bi bi-filetype-css"></i><p>CSS3</p></div>
+
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-2">
+
+     <div class="habilidade"><i class="bi bi-filetype-js"></i><p>JavaScript</p></div>
+
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-2">
+
+     <div class="habilidade"><i class="bi bi-bootstrap-fill"></i><p>Bootstrap</p></div>
+
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-2">
+
+     <div class="habilidade"><i class="bi bi-filetype-py"></i><p>Python</p></div>
+
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-2">
+
+     <div class="habilidade"><i class="bi bi-database-fill"></i><p>Supabase</p></div>
+
+    </div>
+
+   </div>
+
+  </div>
+
+ </section>
+
+
+
+ <section id="projetos">
+
+  <div class="container">
+
+   <h2 class="text-center">Projetos</h2>
+
+   <div class="linha"></div>
+
+   <div class="row g-4">
+
+    <div class="col-12 col-md-6 col-lg-4">
+
+     <div class="card card-projeto h-100">
+
+      <div class="card-body p-4">
+
+       <i class="bi bi-heart-pulse-fill icone"></i>
+
+       <h5 class="card-title mt-2">Nutrify AI</h5>
+
+       <p class="card-text">Aplicativo de nutrição com inteligência artificial.</p>
+
+       <button type="button" class="btn btn-azul" data-bs-toggle="modal" data-bs-target="#modalNutrify">Saiba Mais</button>
+
+      </div>
+
+     </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+
+     <div class="card card-projeto h-100">
+
+      <div class="card-body p-4">
+
+       <i class="bi bi-person-badge-fill icone"></i>
+
+       <h5 class="card-title mt-2">Landing Page Pessoal</h5>
+
+       <p class="card-text">Página responsiva feita com Bootstrap 5 para apresentar meu trabalho.</p>
+
+       <button type="button" class="btn btn-azul" data-bs-toggle="modal" data-bs-target="#modalLanding">Saiba Mais</button>
+
+      </div>
+
+     </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+
+     <div class="card card-projeto h-100">
+
+      <div class="card-body p-4">
+
+       <i class="bi bi-shop-window icone"></i>
+
+       <h5 class="card-title mt-2">Site Institucional</h5>
+
+       <p class="card-text">Site de apresentação para pequenos negócios, com serviços e contato.</p>
+
+       <button type="button" class="btn btn-azul" data-bs-toggle="modal" data-bs-target="#modalSite">Saiba Mais</button>
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </div>
+
+ </section>
+
+
+
+ <section id="contato">
+
+  <div class="container">
+
+   <h2 class="text-center">Contato</h2>
+
+   <div class="linha"></div>
+
+   <div class="row justify-content-center">
+
+    <div class="col-md-8 col-lg-6">
+
+     <form>
+
+      <div class="mb-3">
+
+       <label for="nome" class="form-label">Nome</label>
+
+       <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+
+      </div>
+
+      <div class="mb-3">
+
+       <label for="email" class="form-label">E-mail</label>
+
+       <input type="email" class="form-control" id="email" placeholder="seuemail@exemplo.com">
+
+      </div>
+
+      <div class="mb-3">
+
+       <label for="mensagem" class="form-label">Mensagem</label>
+
+       <textarea class="form-control" id="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
+
+      </div>
+
+      <button type="submit" class="btn btn-azul w-100">Enviar</button>
+
+     </form>
+
+    </div>
+
+   </div>
+
+  </div>
+
+ </section>
+
+
+
+ <footer class="text-center py-4">
+
+  <p class="mb-0">&copy; 2026 Gabriel</p>
+
+ </footer>
+
+
+
+ <div class="modal fade" id="modalNutrify" tabindex="-1">
+
+  <div class="modal-dialog modal-dialog-centered">
+
+   <div class="modal-content">
+
+    <div class="modal-header">
+
+     <h5 class="modal-title">Nutrify AI</h5>
+
+     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+    </div>
+
+    <div class="modal-body">
+
+     <h6>O que é</h6>
+
+     <p>Aplicativo de nutrição para celular que usa inteligência artificial para ajudar o usuário a cuidar melhor da alimentação.</p>
+
+     <h6>Contexto</h6>
+
+     <p>Projeto desenvolvido durante o curso.</p>
+
+    </div>
+
+    <div class="modal-footer">
+
+     <button type="button" class="btn btn-borda" data-bs-dismiss="modal">Fechar</button>
+
+    </div>
+
+   </div>
+
+  </div>
+
+ </div>
+
+
+
+ <div class="modal fade" id="modalLanding" tabindex="-1">
+
+  <div class="modal-dialog modal-dialog-centered">
+
+   <div class="modal-content">
+
+    <div class="modal-header">
+
+     <h5 class="modal-title">Landing Page Pessoal</h5>
+
+     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+    </div>
+
+    <div class="modal-body">
+
+     <h6>O que é</h6>
+
+     <p>É esta própria página: uma landing page responsiva para apresentar quem eu sou, minhas habilidades e meus projetos.</p>
+
+     <h6>Tecnologias</h6>
+
+     <span class="badge tech">HTML5</span>
+
+     <span class="badge tech">CSS3</span>
+
+     <span class="badge tech">Bootstrap 5</span>
+
+    </div>
+
+    <div class="modal-footer">
+
+     <button type="button" class="btn btn-borda" data-bs-dismiss="modal">Fechar</button>
+
+    </div>
+
+   </div>
+
+  </div>
+
+ </div>
+
+
+
+ <div class="modal fade" id="modalSite" tabindex="-1">
+
+  <div class="modal-dialog modal-dialog-centered">
+
+   <div class="modal-content">
+
+    <div class="modal-header">
+
+     <h5 class="modal-title">Site Institucional</h5>
+
+     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+    </div>
+
+    <div class="modal-body">
+
+     <h6>O que é</h6>
+
+     <p>Site de apresentação para pequenos negócios, mostrando quem é a empresa, os serviços e como entrar em contato.</p>
+
+     <h6>Tecnologias</h6>
+
+     <span class="badge tech">HTML5</span>
+
+     <span class="badge tech">CSS3</span>
+
+     <span class="badge tech">Bootstrap 5</span>
+
+    </div>
+
+    <div class="modal-footer">
+
+     <button type="button" class="btn btn-borda" data-bs-dismiss="modal">Fechar</button>
+
+    </div>
+
+   </div>
+
+  </div>
+
+ </div>
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
